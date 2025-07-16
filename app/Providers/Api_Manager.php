@@ -3,7 +3,7 @@ namespace App\Providers;
 class Api_Manager{
 
    // private $url = "https://marvelrivalsapi.com/rivals";
-    //private $key = "91b4b2320eb03e8acdf3cdf9081a366b72a41b1081a30540a438dfd76190c4d0";
+    //private $key = "";
 
     private $baseUrl;
     private $headers;
