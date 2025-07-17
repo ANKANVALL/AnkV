@@ -7,7 +7,7 @@ use App\Views\View;
 
 
 class AuthController{
-    public function showlogin(){
+    public function showLogin(){
         $view = new View('public');
         echo $view->Render(['page' => 'login']);
     }
@@ -27,7 +27,12 @@ class AuthController{
                 'username' => $username,
                 'role' => $usuarios[$username]['role']
             ]);
-            header('Location: /admin/dashboard');
+                if(Auth::VerifiedAdmin()){
+                   header('Location: /admin/dashboard'); 
+                }else{
+                    header('Location: /');
+                }
+            
             exit;
         }
         echo 'credenciales Incorrectas';

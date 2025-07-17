@@ -9,12 +9,14 @@
 </head>
 <body>
   <header>
+ 
     <div class="logo">KASANE</div>
     <nav>
       <a href="/">Inicio</a>
       <a href="/services">Servicios</a>
       <a href="/api_rivals">Rivals</a>
       <a href="/contacts">Contacto</a>
-      <a><?=$_SESSION['active_user']?></a>
+      
+      <a><?=$_SESSION['active_user']['username'] ?? 'invitado'?></a>
     </nav>
   </header>

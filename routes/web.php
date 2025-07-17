@@ -15,8 +15,13 @@ return [
 
     //auth
     '/login' => ['controller' => 'AuthController', 'method' => 'showLogin'],
+    '/loginAuth' => ['controller' => 'AuthController', 'method' => 'login'],
     
     '/logout' => ['controller' => 'AuthController', 'method' => 'logout'],
     
+
+
+
+
     '/admin/dashboard' => ['controller' => 'AdminController', 'method' => 'dashboard'],
 ];
