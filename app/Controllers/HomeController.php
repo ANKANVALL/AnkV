@@ -60,7 +60,7 @@ class HomeController extends Auth {
         $view = new View('public');
 
         $Apidata = new Api_Manager('https://marvelrivalsapi.com/api/v1',[
-            'x-api-key: 91b4b2320eb03e8acdf3cdf9081a366b72a41b1081a30540a438dfd76190c4d0'
+            'x-api-key: '
         ]);
         
    
