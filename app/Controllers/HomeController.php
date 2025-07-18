@@ -6,6 +6,7 @@ namespace App\Controllers;
 use App\Views\View;
 use App\Providers\Api_Manager;
 use App\Providers\Auth;
+use Dotenv\Dotenv;
 class HomeController extends Auth {
 
     private $auth ;
@@ -17,6 +18,9 @@ class HomeController extends Auth {
         
     ];
     public function __construct(){
+        $dotenv = Dotenv::createImmutable(__DIR__.'/../../');
+        $dotenv->load();
+
         $this->auth = new Auth();
         $this->account = $this->auth->check() ? $_SESSION['user'] : 'invitado';
         $_SESSION['active_user'] = $this->account;
@@ -58,9 +62,9 @@ class HomeController extends Auth {
 
     public function api_test(){
         $view = new View('public');
-
+    
         $Apidata = new Api_Manager('https://marvelrivalsapi.com/api/v1',[
-            'x-api-key: '
+            'x-api-key:'
         ]);
         
    
@@ -77,6 +81,7 @@ class HomeController extends Auth {
 
     public function api_rivals(){
         $view = new View('public');
+          
         $html = $view->Render(
             ['page' => 'api_rivals'],
             []

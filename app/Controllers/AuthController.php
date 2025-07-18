@@ -27,12 +27,7 @@ class AuthController{
                 'username' => $username,
                 'role' => $usuarios[$username]['role']
             ]);
-                if(Auth::VerifiedAdmin()){
-                   header('Location: /admin/dashboard'); 
-                }else{
-                    header('Location: /');
-                }
-            
+                    header(Auth::VerifiedAdmin() ? 'Location: /admin/dashboard' : 'Location: /'); 
             exit;
         }
         echo 'credenciales Incorrectas';

@@ -18,5 +18,6 @@
       <a href="/contacts">Contacto</a>
       
       <a><?=$_SESSION['active_user']['username'] ?? 'invitado'?></a>
+      <a href="<?=isset($_SESSION['active_user']['username']) ? '/logout' : '/login';?>"><?=isset($_SESSION['active_user']['username']) ? 'Cerrar Session' : 'Inicia Session'?></a>
     </nav>
   </header>
