@@ -12,6 +12,7 @@ class UserModel extends Db{
 
     public function Insert(){
         $this->query();
+        return ;
     }
 }
 
