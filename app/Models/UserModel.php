@@ -5,9 +5,13 @@ use App\Database\DbClass;
 class UserModel extends Db{
  
     public function Read(){
-        //query para usuarios
         $this->query('SELECT * FROM usuario');
         return $this->resultset();
     }
 
+
+    public function Insert(){
+        
+    }
 }
+
