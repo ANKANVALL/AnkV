@@ -1,16 +1,10 @@
 <?php 
 namespace App\Database;
 
-define('HOST','localhost');
-define('USER','root');
-define('PASS','');
-define('DB_NAME','prueba');
+use Dotenv\Dotenv;
+
  class DbClass{
-     private $hostname = HOST;
-     private $dbname = DB_NAME;
-    private $User = USER;
-    private $Password = PASS;
-    private $charset = 'utf8mb4';
+   
 
     private $dbh;
     private $error;
@@ -18,14 +12,16 @@ define('DB_NAME','prueba');
     private $stmt = null;
    
     public function __construct(){
-       $dsn = "mysql:host={$this->hostname};dbname={$this->dbname};charset={$this->charset}";
+        $dotenv = Dotenv::createImmutable(__DIR__.'/../../');
+        $dotenv->load();
+       $dsn = "mysql:host={$_ENV['DB_HOST']};dbname={$_ENV['DB_NAME']};charset={$_ENV['APP_DEFAULT_CHARSET']}";
         $option = array(
             PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
 
         try{
-            $this->dbh = new PDO($dsn,$this->User,$this->Password,$option);
+            $this->dbh = new PDO($dsn,$_ENV['DB_USER'],$_ENV['DB_PASS'],$option);
         }catch(PDOException $e){
             $this->error = $e->getMessage();
             error_log("DB Error: " . $this->error); // loguea en vez de mostrar
