@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 
 namespace App\Controllers;
@@ -31,3 +32,6 @@ class UserController extends Auth{
         
     }
 }
+=======
+<?php 
+>>>>>>> da9e0e4749b49216702581b6189b4e8130ac0cfc
