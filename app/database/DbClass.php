@@ -2,16 +2,10 @@
 namespace App\Database;
 
 use Dotenv\Dotenv;
-<<<<<<< HEAD
+
 use PDOException;
 use PDO;
  class DbClass{
-
-=======
-
- class DbClass{
-   
->>>>>>> da9e0e4749b49216702581b6189b4e8130ac0cfc
 
     private $dbh;
     private $error;
