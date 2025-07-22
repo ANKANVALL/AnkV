@@ -1,11 +1,15 @@
 <?php 
-require_once __DIR__.'/../database/DbClass.php';
 
-class UserModel extends Db{
- 
+namespace App\Models;
+
+use App\Database\DbClass;
+class UserModel {
+    
+    private $dbh;
     public function Read(){
-        $this->query('SELECT * FROM users');
-        return $this->resultset();
+        $this->dbh = new DbClass();
+        $this->dbh->query('SELECT * FROM usuario');
+        return $this->dbh->resultset();
     }
 
 }

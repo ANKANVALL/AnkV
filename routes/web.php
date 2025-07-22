@@ -21,6 +21,8 @@ return [
     
 
 
+    //pruebas DB    
+    '/dbtest' => ['controller' => 'UserController', 'method' => 'index_v'],
 
 
     '/admin/dashboard' => ['controller' => 'AdminController', 'method' => 'dashboard'],
