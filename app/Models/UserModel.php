@@ -14,5 +14,10 @@ class UserModel extends Db{
         $this->query();
         return ;
     }
+
+    public function Delete(){
+    $this->query();
+    return ;
+    }
 }
 
